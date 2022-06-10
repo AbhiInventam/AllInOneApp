@@ -126,6 +126,7 @@ export default function SignIn() {
                 <Button
                   type="submit"
                   fullWidth
+                  disabled={Boolean(!isValid)}
                   variant="contained"
                   sx={{ mt: 3, mb: 2 }}
                 >
