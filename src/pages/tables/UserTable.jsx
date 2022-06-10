@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { useDispatch, useSelector } from "react-redux";
-import { getUserData, selectUserData } from "./userSlice";
 import EditIcon from "@mui/icons-material/Edit";
 import { Button } from "@mui/material";
+import {
+  getUserData,
+  selectUserData,
+} from "../../redux/store/slices/userSlice";
 
 const columns = [
   { field: "id", headerName: "ID", width: 70 },
@@ -28,7 +31,7 @@ const columns = [
             justifyContent: "flex-end",
             marginLeft: "10px",
           }}
-          onClick={() => console.log("Work in Progress")}
+          onClick={() => console.log("Work in")}
         />
       );
     },
