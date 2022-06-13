@@ -31,18 +31,18 @@ function App() {
   return (
     <Container>
       <section className="navlinks">
-        <CustomLink to={"/"} name="home" />
-        <CustomLink to={"/usertable"} name="usertable" />
-        <CustomLink to={"/dragzone"} name="dragzone" />
+        <CustomLink to={"/"} name="Home" />
+        <CustomLink to={"/usertable"} name="UserTable" />
+        <CustomLink to={"/dragzone"} name="DragZone" />
         {/* <CustomLink to={"/dragndrop"} name="dragndrop" /> */}
-        <CustomLink to={"/userform"} name="userform" />
+        <CustomLink to={"/userform"} name="UserList" />
         {/* <CustomLink to={"/firebaseform"} name="firebaseform" /> */}
-        <CustomLink to={"/editor"} name="editor" />
-        <CustomLink to={"/imagepage"} name="imagepage" />
-        <CustomLink to={"/selectionlist"} name="selectionlist" />
-        <CustomLink to={"/signin"} name="signin" />
-        <CustomLink to={"/signup"} name="signup" />
-        <CustomLink to={"/titles"} name="titles" />
+        <CustomLink to={"/editor"} name="Editor" />
+        <CustomLink to={"/imagepage"} name="ImagePage" />
+        <CustomLink to={"/selectionlist"} name="SelectionList" />
+        <CustomLink to={"/signin"} name="Signin" />
+        <CustomLink to={"/signup"} name="Signup" />
+        <CustomLink to={"/titles"} name="Titles" />
       </section>
       <section>
         <Routes>
