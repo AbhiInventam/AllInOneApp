@@ -17,7 +17,7 @@ const SelectionList = () => {
   //   allStateCity[selectedState]
   // );
 
-  // console.log("---------->> selectedStateCity", selectedStateCity);
+  console.log("---------->> selectedStateCity", selectedStateCity);
   // console.log("---------->> selectedStateCity", selectedStateCity.state);
 
   useEffect(() => {
@@ -34,6 +34,7 @@ const SelectionList = () => {
     setAllCity(allStateCity[event.target.value]);
     setSelectedStateCity({
       ...selectedStateCity,
+      city: "",
       state: event.target.value,
     });
   };
@@ -55,6 +56,7 @@ const SelectionList = () => {
         <select
           placeholder="States"
           // value={allState}
+          value={selectedStateCity.state}
           // onChange={(e) => setAllState(e.target.value)}
           onChange={handleStateChange}
         >
@@ -76,12 +78,13 @@ const SelectionList = () => {
         <select
           placeholder="City"
           // value={allCity}
+          value={selectedStateCity.city}
           // onChange={(e) => setAllState(e.target.value)}
           onChange={handleCityChange}
-          disabled={selectedStateCity.state.length == 0}
+          disabled={selectedStateCity.state.length === 0}
         >
-          <option>--Choose City--</option>
           {/* {Object.keys(allStateCity) == selectedState && */}
+          <option>--Choose City--</option>
           {allCity &&
             allCity.map((value, key) => {
               // console.log("City", "value", value, "key", key);
