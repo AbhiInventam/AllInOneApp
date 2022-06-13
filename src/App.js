@@ -34,9 +34,9 @@ function App() {
         <CustomLink to={"/"} name="home" />
         <CustomLink to={"/usertable"} name="usertable" />
         <CustomLink to={"/dragzone"} name="dragzone" />
-        <CustomLink to={"/dragndrop"} name="dragndrop" />
+        {/* <CustomLink to={"/dragndrop"} name="dragndrop" />
         <CustomLink to={"/userform"} name="userform" />
-        <CustomLink to={"/firebaseform"} name="firebaseform" />
+        <CustomLink to={"/firebaseform"} name="firebaseform" /> */}
         <CustomLink to={"/editor"} name="editor" />
         <CustomLink to={"/imagepage"} name="imagepage" />
         <CustomLink to={"/selectionlist"} name="selectionlist" />
@@ -50,9 +50,9 @@ function App() {
           <Route path="/" element={<Home />}>
             <Route path="usertable" element={<UserTable />} />
             <Route path="dragzone" element={<Drag />} />
-            <Route path="dragndrop" element={<DragNDrop />} />
+            {/* <Route path="dragndrop" element={<DragNDrop />} />
             <Route path="userform" element={<UserForm />} />
-            <Route path="firebaseform" element={<FireBaseForm />} />
+            <Route path="firebaseform" element={<FireBaseForm />} /> */}
             <Route path="editor" element={<Editor />} />
             <Route path="imagepage" element={<ImagePage />} />
             <Route path="selectionlist" element={<SelectionList />} />
