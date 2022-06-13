@@ -20,7 +20,7 @@
 
 
 #Remove vs-code folder
-**/.vscode/
+*.vscode
 
 npm-debug.log*
 yarn-debug.log*
