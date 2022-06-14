@@ -1,18 +1,19 @@
 import { createTheme, ThemeProvider } from "@mui/material";
 
-import axios from "axios";
+import axios from "./axiosInstance";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import useAxiosHook from "../plugins/custom hooks/useAxiosHook/useAxiosHook";
+import axiosInstance from "./axiosInstance";
 
 const UserForm = () => {
   // Custom Hook
   // --------------------------------------------------------------
-  const userData = useAxiosHook({
-    url: "https://jsonplaceholder.typicode.com/posts",
-    method: "get",
-  });
-  console.log("Data ", userData);
+  // const userData = useAxiosHook({
+  //   url: "https://jsonplaceholder.typicode.com/posts",
+  //   method: "get",
+  // });
+  // console.log("Data ", userData);
   // --------------------------------------------------------------
 
   // Traditional way
@@ -32,6 +33,25 @@ const UserForm = () => {
   //       return err;
   //     });
   // }, []);
+  // --------------------------------------------------------------
+
+  // Using Axios Instance
+  // --------------------------------------------------------------
+  const [userData, setUserData] = useState();
+
+  useEffect(() => {
+    axios
+      .get("posts")
+      .then((res) => {
+        console.log("axios data ", res.data);
+        setUserData(res.data);
+        // return res.data;
+      })
+      .catch((err) => {
+        console.log("err");
+        return err;
+      });
+  }, []);
   // --------------------------------------------------------------
 
   // Style Component Use
