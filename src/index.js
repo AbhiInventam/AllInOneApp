@@ -7,6 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./redux/store/store";
+import axios from "axios";
 
 // v18
 // --------------------------------------------------------------------
@@ -16,6 +17,22 @@ import { store } from "./redux/store/store";
 //     <App />
 //   </React.StrictMode>
 // );
+// --------------------------------------------------------------------
+
+// axios Interceptor Code
+// --------------------------------------------------------------------
+// Request
+axios.interceptors.request.use((request) => {
+  // console.log("Intterceptor Req", request);
+  request.headers.channelName = "Abhishek";
+  return request;
+});
+
+// Response
+axios.interceptors.response.use((response) => {
+  // console.log("Intterceptor Res", response);
+  return response;
+});
 // --------------------------------------------------------------------
 
 ReactDOM.render(

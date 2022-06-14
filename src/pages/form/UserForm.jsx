@@ -1,10 +1,10 @@
 import { createTheme, ThemeProvider } from "@mui/material";
+import axios from "axios"; // for Normal call
 
-import axios from "./axiosInstance";
+// import axiosInstance from "./axiosInstance"; // for Instance
 import React, { useEffect } from "react";
 import { useState } from "react";
 import useAxiosHook from "../plugins/custom hooks/useAxiosHook/useAxiosHook";
-import axiosInstance from "./axiosInstance";
 
 const UserForm = () => {
   // Custom Hook
@@ -16,32 +16,13 @@ const UserForm = () => {
   // console.log("Data ", userData);
   // --------------------------------------------------------------
 
-  // Traditional way
-  // --------------------------------------------------------------
-  // const [userData, setUserData] = useState();
-
-  // useEffect(() => {
-  //   axios
-  //     .get("https://jsonplaceholder.typicode.com/posts")
-  //     .then((res) => {
-  //       console.log("axios data ", res.data);
-  //       setUserData(res.data);
-  //       // return res.data;
-  //     })
-  //     .catch((err) => {
-  //       console.log("err");
-  //       return err;
-  //     });
-  // }, []);
-  // --------------------------------------------------------------
-
-  // Using Axios Instance
+  // Traditional way -- For Normal && For axios Interceptors
   // --------------------------------------------------------------
   const [userData, setUserData] = useState();
 
   useEffect(() => {
     axios
-      .get("posts")
+      .get("https://jsonplaceholder.typicode.com/posts")
       .then((res) => {
         console.log("axios data ", res.data);
         setUserData(res.data);
@@ -52,6 +33,25 @@ const UserForm = () => {
         return err;
       });
   }, []);
+  // --------------------------------------------------------------
+
+  // Using Axios Instance
+  // --------------------------------------------------------------
+  // const [userData, setUserData] = useState();
+
+  // useEffect(() => {
+  //   axiosInstance
+  //     .get("posts")
+  //     .then((res) => {
+  //       console.log("axios data ", res.data);
+  //       setUserData(res.data);
+  //       // return res.data;
+  //     })
+  //     .catch((err) => {
+  //       console.log("err");
+  //       return err;
+  //     });
+  // }, []);
   // --------------------------------------------------------------
 
   // Style Component Use
